@@ -1,5 +1,6 @@
-import './index.scss';
 import io from 'socket.io-client';
+
+import 'module/app/script.jsx';
 
 var socket = io();
 

@@ -9,7 +9,7 @@ module.exports = {
         filename: 'index.js'
     },
     resolve: {
-        root: path.join(__dirname, 'static/src/js/'),
+        root: path.join(__dirname, 'static/src/'),
         extensions: ['', '.js', '.jsx']
     },
     module: {
