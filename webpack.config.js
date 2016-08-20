@@ -1,10 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: path.join(__dirname, 'static/src/js/index.js'),
     output: {
-        path: path.join(__dirname, 'static/dist/js/'),
+        path: path.join(__dirname, 'static/dist/'),
         filename: 'index.js'
     },
     resolve: {
@@ -19,5 +20,8 @@ module.exports = {
                 loader: 'babel-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin()
+    ]
 };
