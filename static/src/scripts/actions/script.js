@@ -4,3 +4,10 @@ export function textEntered(message) {
         message
     };
 }
+
+export function messageReceived(message) {
+    return {
+        type: 'MESSAGE_RECEIVED',
+        message
+    };
+}
