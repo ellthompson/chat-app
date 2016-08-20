@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './styling.scss';
+import TextBar from 'module/text-bar/script.jsx';
 
 class App extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                The app has loaded
+                <TextBar/>
             </div>
         );
     }
