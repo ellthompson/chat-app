@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 
 import './styling.scss';
+import store from 'scripts/store.js';
 import TextBar from 'module/text-bar/script.jsx';
 
 class App extends React.Component {
@@ -10,9 +12,11 @@ class App extends React.Component {
     }
     render() {
         return (
-            <div>
-                <TextBar/>
-            </div>
+            <Provider store={store}>
+                <div>
+                    <TextBar/>
+                </div>
+            </Provider>
         );
     }
 };
@@ -25,4 +29,3 @@ ReactDOM.render(
     <App/>,
     reactRoot
 );
-
