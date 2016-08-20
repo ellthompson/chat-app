@@ -2,16 +2,16 @@ import React from 'react';
 
 import './styling.scss';
 
-function keyPressed(event) {
+function keyPressed(textEntered, event) {
     if (event.keyCode === 13) {
-        console.log(event.target.value);
+        textEnrered(event.target.value);
         event.target.value = "";
     }
 }
 
-const TextBar = ({}) => (
+const TextBar = ({textEntered}) => (
     <div className="text-bar">
-        <input type="text" onKeyUp={keyPressed}/>
+        <input type="text" onKeyUp={(event) => {keyPressed(textEntered, event)}}/>
     </div>
 );
 
