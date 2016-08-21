@@ -8,5 +8,11 @@ body {
 
 .chat {
   display: flex;
+  flex-direction: row;
+}
+
+.chat__area {
+  display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }

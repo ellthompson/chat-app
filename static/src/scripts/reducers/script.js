@@ -46,7 +46,17 @@ function username(state = generateGuestUsername(), action) {
     }
 }
 
+function users(state = [], action) {
+    switch (action.type) {
+        case 'UPDATE_USER_LIST':
+            return action.users;
+        default:
+            return state;
+    }
+}
+
 export default {
     messages,
-    username
+    username,
+    users
 }
