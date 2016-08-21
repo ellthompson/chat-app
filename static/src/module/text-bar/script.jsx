@@ -4,18 +4,27 @@ import { connect } from 'react-redux';
 import './styling.scss';
 import { textEntered } from 'scripts/actions/script.js';
 
-function keyPressed(textEntered, event) {
+function keyPressed(username, textEntered, event) {
     if (event.keyCode === 13) {
-        textEntered(event.target.value);
+        textEntered({
+            username,
+            text: event.target.value
+        });
         event.target.value = "";
     }
 }
 
-const TextBar = ({textEntered}) => (
+const TextBar = ({username, textEntered}) => (
     <div className="text-bar">
-        <input type="text" onKeyUp={(event) => {keyPressed(textEntered, event)}}/>
+        <input type="text" onKeyUp={(event) => {keyPressed(username, textEntered, event)}}/>
     </div>
 );
+
+const mapStateToProps = (state) => {
+    return {
+        username: state.username
+    };
+}
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -26,6 +35,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(
-    () => {return {};},
+    mapStateToProps,
     mapDispatchToProps
 )(TextBar);

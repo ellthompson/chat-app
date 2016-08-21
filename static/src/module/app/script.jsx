@@ -11,28 +11,19 @@ import socketListener from 'scripts/socketListener.js';
 socketListener(store);
 import MessageLog from 'module/message-log/script.jsx';
 import TextBar from 'module/text-bar/script.jsx';
-
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <Provider store={store}>
-                <div>
-                    <MessageLog/>
-                    <TextBar/>
-                </div>
-            </Provider>
-        );
-    }
-};
+import Login from 'module/login/script.jsx';
 
 var reactRoot = document.createElement('div');
 reactRoot.className = 'react__root';
 document.body.appendChild(reactRoot);
 
 ReactDOM.render(
-    <App/>,
+    <Provider store={store}>
+        <div className="app">
+            <Login/>
+            <MessageLog/>
+            <TextBar/>
+        </div>
+    </Provider>,
     reactRoot
 );

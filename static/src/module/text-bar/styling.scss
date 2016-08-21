@@ -1,5 +1,5 @@
 .text-bar {
-  width: 100%;
+  padding: 10px;
   display: flex;
   input {
     width: 100%;
@@ -8,5 +8,7 @@
     border-radius: 5px;
     font-size: 18px;
     font-family: monospace;
+    color: #929292;
+    padding: 0px 10px;
   }
 }

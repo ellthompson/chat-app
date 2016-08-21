@@ -5,8 +5,13 @@ import './styling.scss';
 const MessageLog = ({messages}) => (
     <div className="message-log">
         {
-            messages.map((message, i) => {
-                return <div key={i}>{message}</div>;
+            messages.map((chatMessage, i) => {
+                return <div key={i}>
+                    <div className="title">{chatMessage.username}</div>
+                    { chatMessage.text.map((text, i) => {
+                        return <div key={i}>{text}</div>
+                    })}
+                </div>;
             })
         }
     </div>
