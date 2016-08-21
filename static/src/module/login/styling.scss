@@ -1,0 +1,29 @@
+html, body, .react__root, .login {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+.login__container {
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  left: 50%;
+  top: 50%;
+  font-family: monospace;
+  font-size: 18px;
+  color: #929292;
+}
+
+.login {
+  input {
+    font-family: monospace;
+    font-size: 18px;
+    color: black;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+  }
+}
